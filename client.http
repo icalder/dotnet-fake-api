@@ -1,0 +1,33 @@
+@url=http://localhost:5029
+
+GET {{url}}/weatherforecast
+
+###
+GET {{url}}/widgets
+
+###
+GET {{url}}/widgets?color=blue
+
+###
+POST {{url}}/widgets
+Content-Type: application/json
+
+{
+  "id": "31b16533-2695-4197-bc84-e9b72a2a9060",
+  "weight": 442,
+  "color": "blue"
+}
+
+###
+POST {{url}}/widgets
+Content-Type: application/json
+
+{
+  "id": "94c0f992-8c84-4a78-b0ee-c3751b2335be",
+  "weight": 23,
+  "color": "red"
+}
+
+
+###
+DELETE {{url}}/widgets/94c0f992-8c84-4a78-b0ee-c3751b2335be

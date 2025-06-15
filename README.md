@@ -21,10 +21,10 @@ dotnet add reference ../fake-api-spec/tsp-output/server/aspnet/ServiceProject.cs
 
 ```powershell
 dotnet add package Microsoft.EntityFrameworkCore.InMemory
-dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
-dotnet add package Microsoft.EntityFrameworkCore.SqlServer
-dotnet add package Microsoft.EntityFrameworkCore.Design
-dotnet add package Microsoft.EntityFrameworkCore.Tools
+# dotnet add package Microsoft.VisualStudio.Web.CodeGeneration.Design
+# dotnet add package Microsoft.EntityFrameworkCore.SqlServer
+# dotnet add package Microsoft.EntityFrameworkCore.Design
+# dotnet add package Microsoft.EntityFrameworkCore.Tools
 dotnet build
 
 # NB command below creates .config/dotnet-tools.json

@@ -1,3 +1,4 @@
+using FakeApiSpec.Models;
 using Microsoft.EntityFrameworkCore;
 
 namespace FakeApi.Data;
@@ -10,12 +11,12 @@ public class WidgetContext : DbContext
     {
     }
 
-    public DbSet<DemoService.Widget> Widgets { get; set; } = null!;
+    public DbSet<FakeApiSpec.Models.Widget> Widgets { get; set; } = null!;
 
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         // Configure the primary key for the Widget entity
-        modelBuilder.Entity<DemoService.Widget>(entity =>
+        modelBuilder.Entity<FakeApiSpec.Models.Widget>(entity =>
         {
             entity.HasKey(w => w.Id);
             entity.Property(w => w.Id).ValueGeneratedOnAdd();
@@ -26,15 +27,15 @@ public class WidgetContext : DbContext
     {
         var widgets = new[]
         {
-            new DemoService.Widget { Color = "Red", Weight = 33 },
-            new DemoService.Widget { Color = "Blue", Weight = 44 }
+            new FakeApiSpec.Models.Widget { Color = WidgetColor.Red, Weight = 33 },
+            new FakeApiSpec.Models.Widget { Color = WidgetColor.Blue, Weight = 44 }
         };
 
         optionsBuilder.UseSeeding((context, _) =>
         {
             Console.WriteLine("Seeding initial data...");
             // Seed initial data if needed
-            context.Set<DemoService.Widget>().AddRange(widgets);
+            context.Set<FakeApiSpec.Models.Widget>().AddRange(widgets);
             context.SaveChanges();
         });
 
@@ -42,7 +43,7 @@ public class WidgetContext : DbContext
         {
             Console.WriteLine("Seeding initial data asynchronously...");
             // Seed initial data asynchronously if needed
-            context.Set<DemoService.Widget>().AddRange(widgets);
+            context.Set<FakeApiSpec.Models.Widget>().AddRange(widgets);
             await context.SaveChangesAsync(cancellationToken);
         });
     }

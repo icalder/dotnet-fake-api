@@ -3,10 +3,13 @@
 GET {{url}}/weatherforecast
 
 ###
+GET {{url}}/websites
+
+###
 GET {{url}}/widgets
 
 ###
-GET {{url}}/widgets?color=blue
+GET {{url}}/widgets?color=Blue
 
 ###
 POST {{url}}/widgets
@@ -14,9 +17,8 @@ Content-Type: application/json
 
 {
   "weight": 442,
-  "color": "blue"
+  "color": "Blue"
 }
-
 
 ###
 POST {{url}}/widgets
@@ -24,11 +26,11 @@ Content-Type: application/json
 
 {
   "weight": 23,
-  "color": "red"
+  "color": "Red"
 }
 
 ### 
-PATCH {{url}}/widgets/31b16533-2695-4197-bc84-e9b72a2a9060
+PATCH {{url}}/widgets/27921bc6-f451-4a7f-befc-a6d999c54ffd
 Content-Type: application/json
 
 {
@@ -36,7 +38,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{url}}/widgets/31b16533-2695-4197-bc84-e9b72a2a9060/analyze
+POST {{url}}/widgets/dbc20c0c-8ac7-439c-83fc-29bab02bc2b7/analyze
 
 ###
-DELETE {{url}}/widgets/31b16533-2695-4197-bc84-e9b72a2a9060
+DELETE {{url}}/widgets/dbc20c0c-8ac7-439c-83fc-29bab02bc2b7

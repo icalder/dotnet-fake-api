@@ -29,8 +29,13 @@ public class WidgetsApiController : FakeApiSpec.Controllers.WidgetsApiController
     });
   }
 
-  public override async Task<IActionResult> WidgetsCreate([FromBody] Widget widget)
+  public override async Task<IActionResult> WidgetsCreate([FromBody] WidgetsCreateRequest widgetsCreateRequest)
   {
+    var widget = new Widget
+    {
+      Color = widgetsCreateRequest.Color,
+      Weight = widgetsCreateRequest.Weight
+    };
     _context.Widgets.Add(widget);
     await _context.SaveChangesAsync();
     return CreatedAtAction(nameof(WidgetsRead), new { id = widget.Id }, widget);

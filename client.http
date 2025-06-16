@@ -38,7 +38,7 @@ Content-Type: application/json
 }
 
 ###
-POST {{url}}/widgets/31b16533-2695-4197-bc84-e9b72a2a9060/analyze
+POST {{url}}/widgets/dbc20c0c-8ac7-439c-83fc-29bab02bc2b7/analyze
 
 ###
-DELETE {{url}}/widgets/31b16533-2695-4197-bc84-e9b72a2a9060
+DELETE {{url}}/widgets/dbc20c0c-8ac7-439c-83fc-29bab02bc2b7

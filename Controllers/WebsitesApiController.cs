@@ -15,8 +15,14 @@ public class WebsitesApiController : FakeApiSpec.Controllers.WebsitesApiControll
     _context = context;
   }
 
-  public override async Task<IActionResult> WebsitesCreate([FromBody] Website website)
+  public override async Task<IActionResult> WebsitesCreate([FromBody] WebsitesCreateRequest websitesCreateRequest)
   {
+    var website = new Website
+    {
+      Name = websitesCreateRequest.Name,
+      Url = websitesCreateRequest.Url,
+      Description = websitesCreateRequest.Description
+    };
     _context.Websites.Add(website);
     await _context.SaveChangesAsync();
     return CreatedAtAction(nameof(WebsitesRead), new { id = website.Id }, website);

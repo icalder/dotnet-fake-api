@@ -13,7 +13,8 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\fake-api-spec\tsp-output\server\aspnet\ServiceProject.csproj" />
+    <ProjectReference Include="..\dotnet-fake-api-spec\openapi-generator\src\FakeApiSpec\FakeApiSpec.csproj">
+    </ProjectReference>
   </ItemGroup>
 
 </Project>
